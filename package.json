@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "react": "19.1.0",
+    "tscircuit": "0.0.3230"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "@types/react": "19.1.0",
+    "typescript": "5.9.3"
+  },
+  "name": "tscircuit-power-board",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "5 V to 3.3 V prototype PCB designed with tscircuit",
+  "scripts": {
+    "build": "tsci build index.tsx --disable-parts-engine --svgs --pcb-png --schematic-png --3d",
+    "check": "tsc --noEmit && tsci check netlist index.tsx && tsci check shorts index.tsx",
+    "export:gerbers": "tsci export dist/index/circuit.json -f gerbers -o ../gerbers.zip"
+  },
+  "private": true
+}
